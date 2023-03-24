@@ -42,4 +42,23 @@ Check if the outliersare removed from data set using graphical methods.
 ## Step 8
 Save the final data set into the file.
 
-# PROGRAMMING
+# Program:
+### (i)For the data set height_weight.csv detect weight outliers using IQR method
+```python
+import pandas as pd
+import numpy as np
+import seaborn as sns
+from scipy import stats
+df=pd.read_csv("/content/height_weight.csv")
+df
+sns.boxplot(x="weight",data=df)
+q1 = df["weight"].quantile(0.25)
+q3 = df['weight'].quantile(0.75)
+print("First Quantile = ",q1,"\nSecond Quantile = ",q3)
+IQR = q3-q1
+low = q1-1.5*IQR
+high = q3+1.5*IQR
+df4 =df[((df['weight']>=low)&(df['weight']<=high))]
+df4
+sns.boxplot(x="weight",data=df4)
+```
