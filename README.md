@@ -77,3 +77,11 @@ sns.boxplot(x="height",data=df4)
 sns.scatterplot(data=df4)
 sns.boxplot(data=df4)
 ```
+# Output
+![output](o1.png)
+![output](o2.png)
+![output](o3.png)
+![output](o4.png)
+![output](o5.png)
+![output](o6.png)
+![output](o7.png)
