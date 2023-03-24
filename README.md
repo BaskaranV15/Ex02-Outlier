@@ -62,3 +62,18 @@ df4 =df[((df['weight']>=low)&(df['weight']<=high))]
 df4
 sns.boxplot(x="weight",data=df4)
 ```
+### (ii) For the data set height_weight.csv detect height outliers using IQR method.
+```python 
+sns.boxplot(x="height",data=df)
+q1 = df["height"].quantile(0.25)
+q3 = df['height'].quantile(0.75)
+print("First Quantile = ",q1,"\nSecond Quantile = ",q3)
+IQR = q3-q1
+low = q1-1.5*IQR
+high = q3+1.5*IQR
+df4 =df[((df['height']>=low)&(df['height']<=high))]
+df4
+sns.boxplot(x="height",data=df4)
+sns.scatterplot(data=df4)
+sns.boxplot(data=df4)
+```
